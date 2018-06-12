@@ -1,7 +1,11 @@
 package com.example.mjivan.weatherforcasterv1
 
+import android.content.Context
+import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -39,5 +43,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 15F))
+        googleMap.isMyLocationEnabled=true
+
+
+fun checkPermission(context: Context, permissionArray :Array<String>):Boolean
+{
+    return false
+}
+
     }
 }
