@@ -185,3 +185,4 @@ fun checkPermission(context: Context, permissionArray :Array<String>):Boolean
 
 
 }
+}
